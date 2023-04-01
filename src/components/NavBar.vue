@@ -39,6 +39,11 @@ export default {
           ><i class="fa-brands fa-youtube fa-2xl"></i
         ></router-link>
       </li>
+      <li>
+        <router-link :to="'/game/'+randoma()"
+          ><i class="fa-brands fa-shuffle fa-2xl"></i
+        ></router-link>
+      </li>
     </ul>
   </div>
 </template>

@@ -13,8 +13,8 @@ export default {
     this.getaxios();
   },
   methods: {
-    async getaxios() {
-      await axios
+     getaxios() {
+       axios
         .get(urlGame + this.id, {
           headers: Headers,
         })
