@@ -11,7 +11,6 @@ export default {
   },
   created() {
     this.getaxios();
-    console.log(this.game);
   },
   methods: {
     async getaxios() {
@@ -21,7 +20,9 @@ export default {
         })
         .then((data) => {
           this.game = data.data;
-          console.log(data.data);
+        }).catch((err) =>{
+          this.id=Math.floor(Math.random() * 600)
+          this.getaxios()
         });
     },
   },
@@ -29,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <div class="">
+  <div class="bg-black">
     <div class="relative">
       <div class="bg-gray-950 relative">
         <img
@@ -38,19 +39,19 @@ export default {
         />
       </div>
 
-      <div class="absolute top-[0] left-[0] p-8 text-white flex">
-        <div class="w-[30vw] fixed top-[50px]">
-          <img :src="this.game.thumbnail" class="lateral2 hover:z-10 hover:scale-[1.1] ease-in duration-300" />
+      <div class="absolute top-[0] left-[0] p-8 text-white flex smal">
+        <div class="w-[30vw] fixed top-[50px] divIzq">
+          <img :src="this.game.thumbnail" class="drop-shadow-[40px] shadow-lg shadow-[#000000] lateral2 hover:z-10 hover:scale-[1.1] ease-in duration-300" />
 
           <a :href="this.game.game_url">
             <button
-              class="font-bold py-2 px-4 rounded bg-green-700 text-white w-[22vw] mx-[2vw] mt-3 content-center" >
+              class="drop-shadow-[50px] shadow-lg shadow-[#000000] font-bold py-2 px-4 rounded bg-green-700 text-white w-[22vw] mx-[2vw] mt-3 content-center" >
               Download
             </button>
           </a>
           <a :href="this.game.freetogame_profile_url">
             <button
-              class="font-bold py-2 px-4 rounded bg-green-700 text-white w-[22vw] mx-[2vw] mt-3 content-center" >
+              class="drop-shadow-[50px] shadow-lg shadow-[#000000] font-bold py-2 px-4 rounded bg-green-700 text-white w-[22vw] mx-[2vw] mt-3 content-center" >
               Main page
             </button>
 
@@ -58,17 +59,17 @@ export default {
 
             <h4 class="text-center text-3xl my-4">Information</h4>
             <div class="grid grid-cols-2  ">
-              <p class="content-center rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Platform: {{ this.game.platform }}</p>
-              <p class=" rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Publisher: {{ this.game.developer }}</p>
-              <p class=" rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Release date: {{ this.game.release_date }}</p>
-              <p class=" rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Status: {{ this.game.status }}</p>
-              <p class=" py-1 px-1 rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Genre: {{ this.game.genre }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000] rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Platform: {{ this.game.platform }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Publisher: {{ this.game.developer }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Release date: {{ this.game.release_date }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Status: {{ this.game.status }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  py-1 px-1 rounded bg-blue-500 text-white bg-blue-700 m-1 text-center">Genre: {{ this.game.genre }}</p>
             </div>
   
           
         </div>
 
-        <div class="w-[70%] ml-[35%]">
+        <div class="w-[70%] ml-[35%] divDer">
           <h1 class="text-6xl text-center text-white mb-4">
             {{ this.game.title }}
           </h1>
@@ -78,15 +79,15 @@ export default {
           <div>
             <h4 class="text-center text-3xl mb-4">Especificaciones</h4>
             <div class="grid grid-cols-2 gap-1">
-              <p class="font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">OS: {{ this.game.minimum_system_requirements.os }}</p>
-              <p class="font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">OS: {{ this.game.minimum_system_requirements.os }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">
                 Graphics: {{ this.game.minimum_system_requirements.graphics }}
               </p>
-              <p class="font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">Memory: {{ this.game.minimum_system_requirements.memory }}</p>
-              <p class="font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">Memory: {{ this.game.minimum_system_requirements.memory }}</p>
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">
                 Storage: {{ this.game.minimum_system_requirements.storage }}
               </p>
-              <p class="font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">
+              <p class="drop-shadow-[50px] shadow-lg shadow-[#000000]  font-bold py-2 px-4 rounded bg-blue-500 text-white bg-blue-700  mx-[2vw] mt-1 text-center">
                 Processor: {{ this.game.minimum_system_requirements.processor }}
               </p>
             </div>
@@ -125,4 +126,34 @@ export default {
   display: table;
   z-index: 1;
 }
+@media screen and (max-width: 520px) {
+  .fondo{
+    width: 100vw;
+    height: 100vh;
+  }
+  .over {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+    .lateral2 {
+  position:static;
+  display: block;
+  z-index: 0;
+  
+  }
+ .smal{
+    flex-direction: column;
+  }
+  .divDer{
+    width: 100%;
+    margin: 1vw;
+  }
+  .divIzq{
+    width: 100%;
+    margin: 1vw;
+    position: unset;
+  }
+}
+ 
 </style>

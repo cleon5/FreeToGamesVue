@@ -14,9 +14,9 @@ axios.get(Url, {
 
 
 <template>
-  <div class="h-screen flex ">
+  <div class="h-screen flex flexd">
     <NavBar />
-    <div class="bg-gray-700 w-full scrollp ">
+    <div class="bg-gray-700 w-full scrollp bg-zinc-800">
       <router-view/> 
     </div>
    </div>
@@ -28,5 +28,10 @@ axios.get(Url, {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+  }
+  @media screen and (max-width: 520px) {
+    .flexd{
+      flex-direction: column;
+    }
   }
 </style>

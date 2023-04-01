@@ -34,7 +34,7 @@ export default {
 </script>
 <template>
     <h1 class="text-center text-6xl underline text-white m-8"> Lista de juegos</h1>
-    <div class="m-3 grid grid-cols-4 gap-3 ">
+    <div class="m-3 grid gap-3 grid-cols-2 sm:grid-cols-4">
         <GameComp v-for="game in Games" :key="game.id" :game="game"/>
     </div>
 </template>
