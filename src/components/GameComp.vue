@@ -17,7 +17,7 @@ export default {
   <div
     class="drop-shadow-2xl max-w-sm rounded overflow-hidden shadow-lg shadow-[#9D9A99] hover:z-10 hover:scale-[1.1] ease-in duration-300"
   >
-    <a :href="url">
+    <router-link :to="'/game/'+game.id">
       <img class="w-full" :src="game.thumbnail" alt="Sunset in the mountains" />
       <div class="px-1 py-1">
         <div class="font-bold text-[1.5vw] mb-1 text-center text-white">
@@ -37,6 +37,6 @@ export default {
           >{{ game.platform }}</span
         >
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
