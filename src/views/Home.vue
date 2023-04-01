@@ -170,26 +170,26 @@ export default {
    <div class="flex w-[100%]">
       <div class="flex-col mx-[1%] mt-[10px] w-[60%]">
 
-         <a v-for="Game in games" :key="Game.id" :href="'./game/'+Game.id" class="m-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+         <router-link :to="'/game/'+Game.id" v-for="Game in games" :key="Game.id" class="m-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
          <img class="object-cover w-[50%] rounded-t-lg  md:h-auto  md:rounded-none md:rounded-l-lg"  :src="Game.thumbnail"  alt="">
          <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{Game.title}}</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{(Game.short_description)}}</p>
          </div>
-         </a>
+         </router-link >
 
         
       </div>
 
       <div class="flex-col mx-[1%] mt-[10px] w-[30%]">
 
-         <a v-for="Game in filtergames" :key="Game.id" :href="'./game/'+Game.id" class=" m-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+         <router-link :to="'/game/'+Game.id" v-for="Game in filtergames" :key="Game.id" class=" m-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
          <img class="object-cover w-full rounded-t-lg  md:h-auto  md:rounded-none md:rounded-l-lg"  :src="Game.thumbnail"  alt="">
          <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{Game.title}}</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
          </div>
-         </a>
+         </router-link >
 
 
       </div>

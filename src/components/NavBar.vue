@@ -29,21 +29,17 @@ export default {
           ><i class="fa-solid fa-list fa-2xl"></i>
         </router-link>
       </li>
-      <li>
-        <a :href="'/game/' + randoma()">
-          <i class="fa-solid fa-shuffle fa-2xl"></i>
-        </a>
+       <li>
+        <router-link :to="'/game/'+randoma()"
+          ><i class="fa-solid fa-shuffle fa-2xl"></i
+        ></router-link>
       </li>
       <li>
         <router-link to="/secon"
           ><i class="fa-brands fa-youtube fa-2xl"></i
         ></router-link>
       </li>
-      <li>
-        <router-link :to="'/game/'+randoma()"
-          ><i class="fa-brands fa-shuffle fa-2xl"></i
-        ></router-link>
-      </li>
+     
     </ul>
   </div>
 </template>
